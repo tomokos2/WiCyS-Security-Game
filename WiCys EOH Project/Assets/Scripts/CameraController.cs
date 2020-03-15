@@ -6,6 +6,9 @@ public class CameraController : MonoBehaviour
 {
     public GameObject followTarget;
     private Vector3 targetPos;
+    public Vector2 maxPos;
+    public Vector2 minPos;
+
     public float moveSpeed;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +20,11 @@ public class CameraController : MonoBehaviour
     void Update()
     {
       targetPos = new Vector3(followTarget.transform.position.x, followTarget.transform.position.y, transform.position.z);
-      transform.position = Vector3.Lerp (transform.position, targetPos, moveSpeed * Time.deltaTime);
+        
+        // Camera bounds
+        targetPos.x = Mathf.Clamp(targetPos.x, minPos.x, maxPos.x);
+        targetPos.y = Mathf.Clamp(targetPos.y, minPos.y, maxPos.y);
+
+        transform.position = Vector3.Lerp(transform.position, targetPos, moveSpeed * Time.deltaTime);
     }
 }
