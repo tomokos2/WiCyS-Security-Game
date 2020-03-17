@@ -9,10 +9,21 @@ public class CameraController : MonoBehaviour
     public Vector2 maxPos;
     public Vector2 minPos;
 
+    private static bool cameraExists;
+
     public float moveSpeed;
     // Start is called before the first frame update
     void Start()
     {
+        if (!cameraExists)
+        {
+            cameraExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame

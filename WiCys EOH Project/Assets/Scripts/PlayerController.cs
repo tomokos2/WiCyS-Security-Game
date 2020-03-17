@@ -9,9 +9,21 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private Rigidbody2D myBody;
     // Start is called before the first frame update
+
+    private static bool playerExists;
     void Start() {
         anim = GetComponent<Animator>();
         myBody = GetComponent<Rigidbody2D>();
+
+        if (!playerExists)
+        {
+            playerExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        } else
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
     // Update is called once per frame
