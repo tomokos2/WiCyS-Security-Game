@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadNewArea : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class LoadNewArea : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            Application.LoadLevel(levelToLoad);
+            SceneManager.LoadScene(levelToLoad);
         }
     }
 }
