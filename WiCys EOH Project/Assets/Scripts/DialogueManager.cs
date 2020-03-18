@@ -8,10 +8,11 @@ public class DialogueManager : MonoBehaviour
     public GameObject dBox;
     public Text dText;
 
-    public bool dialogActive;
+    private bool dialogActive;
     // Start is called before the first frame update
     void Start()
     {
+        dialogActive = false;
         dBox.SetActive(false);
     }
 
@@ -22,14 +23,14 @@ public class DialogueManager : MonoBehaviour
         {
             dBox.SetActive(false);
             dialogActive = false;
-        } 
+        }
+      
     }
 
     public void ShowBox(string dialogue)
     {
         dialogActive = true;
-        dText.text = dialogue;
         dBox.SetActive(true);
-        
+        dText.text = dialogue;
     }
 }

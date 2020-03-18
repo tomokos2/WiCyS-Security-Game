@@ -22,7 +22,7 @@ public class DialogueHolder : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.F))
             {
                 dMan.ShowBox(dialogue);
             }
