@@ -8,12 +8,15 @@ public class DialogueManager : MonoBehaviour
     public GameObject dBox;
     public Text dText;
 
-    private bool dialogActive;
+    public string[] dialogueLines;
+    public int currentLine;
+
+    public bool dialogActive;
     // Start is called before the first frame update
     void Start()
     {
-        dialogActive = false;
-        dBox.SetActive(false);
+        //dialogActive = false;
+        //dBox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,16 +24,23 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogActive && Input.GetKeyDown(KeyCode.Space))
         {
+            currentLine++;
+        }
+        if (currentLine >= dialogueLines.Length)
+        {
             dBox.SetActive(false);
             dialogActive = false;
+
+            currentLine = 0;
         }
+
+        dText.text = dialogueLines[currentLine];
       
     }
 
-    public void ShowBox(string dialogue)
+    public void ShowDialogue()
     {
         dialogActive = true;
         dBox.SetActive(true);
-        dText.text = dialogue;
     }
 }

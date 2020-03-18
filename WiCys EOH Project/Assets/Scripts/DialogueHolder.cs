@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DialogueHolder : MonoBehaviour
 {
-    public string dialogue;
+    public string[] dialogueLines;
+
     private DialogueManager dMan;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,12 @@ public class DialogueHolder : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.F))
             {
-                dMan.ShowBox(dialogue);
+                if (!dMan.dialogActive)
+                {
+                    dMan.dialogueLines = dialogueLines;
+                    dMan.currentLine = 0;
+                    dMan.ShowDialogue();
+                }
             }
         }
     }
