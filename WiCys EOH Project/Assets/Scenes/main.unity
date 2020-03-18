@@ -398,7 +398,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dBox: {fileID: 2118967332}
   dText: {fileID: 342005406}
-  dialogueLines: []
+  dialogueLines:
+  - test 1
+  - test 2
+  - test 3
   currentLine: 0
   dialogActive: 0
 --- !u!1 &342005404
@@ -1209,7 +1212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2118967333
 RectTransform:
   m_ObjectHideFlags: 0
