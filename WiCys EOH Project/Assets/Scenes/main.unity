@@ -232,6 +232,11 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6737938972432651809, guid: 7d279dec3c048ef4a8804744896326a2,
+        type: 3}
+      propertyPath: canMove
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6737938972432651811, guid: 7d279dec3c048ef4a8804744896326a2,
         type: 3}
       propertyPath: m_Size.y
