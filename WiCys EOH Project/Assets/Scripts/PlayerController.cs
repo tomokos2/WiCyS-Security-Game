@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
         if (!canMove)
         {
             myBody.velocity = Vector2.zero;
+            anim.SetBool("PlayerMoving", false);
             return;
         }
 
